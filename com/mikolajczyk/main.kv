@@ -1,0 +1,80 @@
+<RootWidget>:
+
+    video: video
+    points: points
+    time: time
+    confirm: confirm
+    textA: textA
+    textB: textB
+    textC: textC
+    taskText: taskText
+
+    Label:
+        id: points
+        pos_hint:{"x":-0.45,"y":0.48}
+        text: "POINTS: 0"
+
+    Video:
+        id: video
+        source: "bubble_sort.gif"
+        state: "play"
+        keep_ratio: True
+        allow_stretch: False
+        size_hint: 1, 1.6
+
+    Label:
+        id: taskText
+        pos_hint:{"x":-0.05,"y":0.1}
+        text: "Zadanie: Na podstawie filmiku wybierz odpowiedź A, B, C. Przedstawiona animacja obrazuje sortowanie:"
+
+    Label:
+        id: time
+        pos_hint:{"x": 0.47, "y":0.48}
+        text: "00:59"
+
+    Button:
+        id: confirm
+        size_hint: None, None
+        size: 75, 50
+        pos_hint: {"x": 0.47, "y": 0.1}
+        text: "Następne"
+
+    Label:
+        text: "A)"
+        pos_hint:{"x": -0.33, "y":0}
+    Label:
+        text: "B)"
+        pos_hint:{"x": -0.33, "y":-0.1}
+    Label:
+        text: "C)"
+        pos_hint:{"x": -0.33, "y":-0.2}
+
+    Label:
+        id: textA
+        text: "Sortowanie przez wstawianie"
+        pos_hint:{"x": -0.15, "y":0}
+    Label:
+        id: textB
+        text: "Sortowanie bąbelkowe"
+        pos_hint:{"x": -0.15, "y":-0.1}
+    Label:
+        id: textC
+        text: "Sortowanie przez wybieranie"
+        pos_hint:{"x": -0.15, "y":-0.2}
+
+    BoxLayout:
+        orientation: "vertical"
+        size_hint: (1, 0.3)
+        pos_hint:{"y": 0.25, "x": -0.3}
+
+        CheckBox:
+
+            group: "group"
+
+        CheckBox:
+
+            group: "group"
+        CheckBox:
+
+            group: "group"
+
