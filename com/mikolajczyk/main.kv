@@ -8,6 +8,9 @@
     textB: textB
     textC: textC
     taskText: taskText
+    answerA: answerA
+    answerB: answerB
+    answerC: answerC
 
     Label:
         id: points
@@ -30,7 +33,7 @@
     Label:
         id: time
         pos_hint:{"x": 0.47, "y":0.48}
-        text: "00:59"
+        text: "00:30"
 
     Button:
         id: confirm
@@ -38,6 +41,7 @@
         size: 75, 50
         pos_hint: {"x": 0.47, "y": 0.1}
         text: "Następne"
+        on_press: root.update(video)
 
     Label:
         text: "A)"
@@ -59,7 +63,7 @@
         pos_hint:{"x": -0.15, "y":-0.1}
     Label:
         id: textC
-        text: "Sortowanie przez wybieranie"
+        text: "Sortowanie przez scalanie"
         pos_hint:{"x": -0.15, "y":-0.2}
 
     BoxLayout:
@@ -68,13 +72,17 @@
         pos_hint:{"y": 0.25, "x": -0.3}
 
         CheckBox:
-
+            id: answerA
             group: "group"
-
+            text: "A"
+            on_active: root.answer = self.text
         CheckBox:
-
+            id: answerB
             group: "group"
+            text: "B"
+            on_active: root.answer = self.text
         CheckBox:
-
+            id: answerC
             group: "group"
-
+            text: "C"
+            on_active: root.answer = self.text
