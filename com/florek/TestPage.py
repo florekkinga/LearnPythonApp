@@ -1,12 +1,11 @@
 import kivy
-from kivy.app import App
 from kivy.uix.label import Label
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 kivy.require("1.11.1")
 
-class ConnectPage(GridLayout):
+class TestPage(GridLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.cols = 2
@@ -32,16 +31,4 @@ class ConnectPage(GridLayout):
         text1 = self.input1.text
         username = self.username.text
         email = self.email.text
-        with open("prev_details.txt","w") as f:
-            f.write(f"{text1},{username},{email}")
-        print(f"Joining {text1}:{email} as {username}")
 
-
-
-
-class WdiApp(App):
-    def build(self):
-        return ConnectPage()
-
-if __name__ == "__main__":
-    WdiApp().run()

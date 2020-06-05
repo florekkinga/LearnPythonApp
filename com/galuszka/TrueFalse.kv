@@ -1,0 +1,50 @@
+<MyLayout>
+    question: question
+    bt: bt
+    bf: bf
+    text: text
+
+    GridLayout:
+        rows: 3
+        size: root.width, root.height
+        # cols: 2
+        BoxLayout:
+            orientation: 'horizontal'
+            Image:
+                source: 'logo.png'
+                # pos_hint: {"x": 0, "top": 1}
+
+            Label:
+                id: text
+                text: "Oceń prawdziwość \nponiższego stwierdzenia"
+                font_size: 20
+                color: 0, 0, 0, 1
+                # pos_hint:{"center_x":0.5,"center_y":0.9}
+            BoxLayout:
+                orientation: 'vertical'
+                Button:
+                    text: "Start"
+                    background_color: 0, 0, 0, 1
+                    on_press: root.start()
+                Button:
+                    text: "Dalej"
+                    background_color: 0, 0, 0, 1
+        BoxLayout:
+            Label:
+                id: question
+                text: ""
+                color: 100, 100, 100, 1
+        BoxLayout:
+            orientation: 'horizontal'
+            Button:
+                id: bt
+                text: "Prawda"
+                font_size: 40
+                background_color: 0, 255, 0, 1
+                on_press: root.check(True), root.start()
+            Button:
+                id: bf
+                text: "Fałsz"
+                font_size: 40
+                background_color: 255, 0, 0, 1
+                on_press: root.check(False),  root.start()
