@@ -39,8 +39,8 @@ class RootWidget(FloatLayout):
 
 
 class MainApp(App):
-
-    seconds = 30
+    AMOUNT = 30
+    seconds = AMOUNT
     widget = None
 
     def build(self):
@@ -53,10 +53,10 @@ class MainApp(App):
         self.widget.__self__.ids.time.text = "00:{}".format(self.seconds)
         if self.seconds == 0:
             self.widget.__self__.ids.time.text = "FINISH"
-            self.seconds = 30
+            self.seconds = self.AMOUNT
             self.widget.__self__.ids.confirm.trigger_action(duration=0.1)
         if self.widget.__self__.ids.confirm.state == "down":
-            self.seconds = 30
+            self.seconds = self.AMOUNT
 
 
 if __name__ == '__main__':
