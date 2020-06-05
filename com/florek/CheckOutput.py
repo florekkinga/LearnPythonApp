@@ -1,5 +1,6 @@
 from kivy.uix.boxlayout import BoxLayout
 
+
 class CheckOutput(BoxLayout):
     points = 0
     answer = ""
@@ -8,6 +9,6 @@ class CheckOutput(BoxLayout):
     def checkAnswer(self):
         self.answer = self.ids.input.text
 
-        if(self.answer == self.correct_answer):
+        if self.answer == self.correct_answer:
             self.points += 1
-            self.ids.points.text = "TWOJE PUNKTY: " + str(self.points)
+            self.ids.points.text = "TWOJE PUNKTY:\n" + str(self.points)

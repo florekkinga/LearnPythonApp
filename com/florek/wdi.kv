@@ -14,13 +14,15 @@
 
         Label:
             id: points
-            text: "TWOJE PUNKTY: 0"
+            text: "TWOJE PUNKTY: \n0"
             background_color: 0, 1, 0, 1
             font_size: 20
+            halign: 'center'
 
     Label:
         size_hint: 1, 0.5
-        text: "ZADANIE: \n Podaj jaki output zostanie wypisany po wykonaniu poniższego kodu."
+        id: task
+        text: "ZADANIE: \n Podaj jaki output zostanie wypisany po wykonaniu się poniższego kodu."
         halign: 'center'
         font_size: 20
 
@@ -47,3 +49,86 @@
             on_press: root.checkAnswer()
 
 
+<ChooseLine>:
+
+    orientation: 'vertical'
+
+    BoxLayout:
+        size_hint: 1, 0.5
+        orientation: "horizontal"
+        Label:
+            id: time
+            text: "POZOSTAŁY CZAS: \n00:30"
+            background_color: 0, 1, 1, 1
+            font_size: 20
+            halign: 'center'
+
+        Label:
+            id: points
+            text: "TWOJE PUNKTY: \n0"
+            background_color: 0, 1, 0, 1
+            font_size: 20
+            halign: 'center'
+
+    Label:
+        size_hint: 1, 0.5
+        id: task
+        text: "ZADANIE: \n Zaznacz linię, w ktorej jest sprawdzana długość listy."
+        halign: 'center'
+        font_size: 20
+
+    BoxLayout:
+        size_hint: 1, 2
+        orientation: "vertical"
+
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: lineA
+                group: "group"
+                text: "A"
+                on_active: root.answer = self.text
+            Label:
+                text: "list = [1,2,3,4]"
+                halign: 'left'
+
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: lineB
+                group: "group"
+                text: "B"
+                on_active: root.answer = self.text
+            Label:
+                text: "list.append([5,6,7,8])"
+                halign: 'left'
+
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: lineC
+                group: "group"
+                text: "C"
+                on_active: root.answer = self.text
+            Label:
+                text: "print len(list)"
+                halign: 'left'
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: lineD
+                text: "D"
+                group: "group"
+                on_active: root.answer = self.text
+            Label:
+                text: "print(list)"
+                halign: 'left'
+
+    BoxLayout:
+        size_hint: 1, 0.5
+        orientation: "horizontal"
+        Button:
+            text: "ZATWIERDŹ"
+            background_color: 0, 1, 0, 1
+            font_size: 25
+            on_press: root.checkAnswer()
