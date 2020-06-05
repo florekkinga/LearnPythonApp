@@ -24,7 +24,7 @@ class RootWidget(FloatLayout):
 
 class MainApp(App):
 
-    seconds = 5
+    seconds = 30
     widget = None
 
     def build(self):

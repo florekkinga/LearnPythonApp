@@ -15,7 +15,7 @@
 
     Label:
         pos_hint: {"x": 0, "y":0.4}
-        text: "ZADANIE: \n W jakiej kolejnosci powinien wykonac sie kod?"
+        text: "ZADANIE: \nUzupelnij kod"
         halign: 'center'
         font_size: 23
 
@@ -29,14 +29,10 @@
         on_press: root.checkAnswer
 
 
-    Label:
-        text: "1. less = []\n2.    greater = []\n3.def sort(array=[12,4,5,6,7,3,1,15]):\n4.        pivot = array[0]\n5.    equal = []\n6.    if len(array) > 1:\n7.                less.append(x)\n8.        for x in array:\n9.           if x < pivot:\n10.                equal.append(x)\n11.            elif x > pivot:\n12.            elif x == pivot:\n13.                greater.append(x)\n14.    else:\n15.        return sort(less)+equal+sort(greater)\n16.        return array"
-        font_size: 13
-        pos_hint: {"x": 0, "y":0.1}
-
     TextInput:
-        id: input
-        multiline: False
-        pos_hint: {"x": 0.27, "y": 0.2}
-        size_hint: None, None
-        size: 400, 75
+        text: "def sort(array=[12,4,5,6,7,3,1,15]):\n#tutaj wpisz kod\n    equal = []\n    greater = []\n #tutaj wpisz kod\n        pivot = array[0]\n        for x in array:\n#tutaj wpisz kod\n\n\n\n        return sort(less)+equal+sort(greater)\n    else:\n        return array\n"
+        font_size: 13
+        pos_hint: {"x": 0.27, "y":0.2}
+        size_hint: None, None,
+        size: 400,300
+

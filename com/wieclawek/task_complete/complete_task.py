@@ -5,7 +5,7 @@ from kivy.clock import Clock
 
 
 class rootWidget(FloatLayout):
-    answer = "3,1,5,2,6,4,8,9,7,12,10,11,13,15,14,16"
+    answer = "def sort(array=[12,4,5,6,7,3,1,15]):\n    less = []\n    equal = []\n    greater = []\n    if len(array) > 1:\n        pivot = array[0]\n        for x in array:\n            if x < pivot:\n                less.append(x)\n            elif x == pivot:\n                equal.append(x)\n            elif x > pivot:\n                greater.append(x)\n        return sort(less)+equal+sort(greater)\n    else:\n        return array\n"
     ppp = 0
     start = 0
 
@@ -24,7 +24,7 @@ class rootWidget(FloatLayout):
 
 class Main2App(App):
 
-    seconds = 5
+    seconds = 30
     widget = None
 
     def build(self):
