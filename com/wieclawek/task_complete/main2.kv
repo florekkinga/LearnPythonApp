@@ -1,0 +1,42 @@
+<rootWidget>:
+
+    time: time
+
+    Label:
+        id: points
+        pos_hint:{"x": -0.45, "y": 0.48}
+        text: "POINTS: 0"
+
+
+    Label:
+        id: time
+        pos_hint:{"x": 0.47, "y":0.48}
+        text: "00:30"
+
+    Label:
+        pos_hint: {"x": 0, "y":0.4}
+        text: "ZADANIE: \n W jakiej kolejnosci powinien wykonac sie kod?"
+        halign: 'center'
+        font_size: 23
+
+
+    Button:
+        id: confirm
+        size_hint: None, None
+        size: 75, 50
+        pos_hint: {"x": 0.47, "y": 0.1}
+        text: "Dalej"
+        on_press: root.checkAnswer
+
+
+    Label:
+        text: "1. less = []\n2.    greater = []\n3.def sort(array=[12,4,5,6,7,3,1,15]):\n4.        pivot = array[0]\n5.    equal = []\n6.    if len(array) > 1:\n7.                less.append(x)\n8.        for x in array:\n9.           if x < pivot:\n10.                equal.append(x)\n11.            elif x > pivot:\n12.            elif x == pivot:\n13.                greater.append(x)\n14.    else:\n15.        return sort(less)+equal+sort(greater)\n16.        return array"
+        font_size: 13
+        pos_hint: {"x": 0, "y":0.1}
+
+    TextInput:
+        id: input
+        multiline: False
+        pos_hint: {"x": 0.27, "y": 0.2}
+        size_hint: None, None
+        size: 400, 75
