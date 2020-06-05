@@ -22,7 +22,7 @@ class rootWidget(FloatLayout):
             print("Ehh")
 
 
-class MainApp(App):
+class Main2App(App):
 
     seconds = 5
     widget = None
@@ -48,4 +48,4 @@ class MainApp(App):
 
 
 if __name__ == '__main__':
-    MainApp().run()
+    Main2App().run()
