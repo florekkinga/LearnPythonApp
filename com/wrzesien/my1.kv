@@ -1,0 +1,200 @@
+WindowManager:
+    MainWindow:
+    SecondWindow:
+    LevelsWindow:
+    Type2Window:
+
+<MainWindow>:
+    name: "main"
+
+    GridLayout:
+        cols: 2
+        rows: 2
+
+        Image:
+            source: 'pythonNeutral.png'
+        Label:
+            text: "Nauka\nPythona"
+            font_size: 50
+            color: 41/255, 128/255, 185/255, 1.0
+        # GridLayout:
+        #     cols: 2
+        #
+        #     Label:
+        #         text: "Password: "
+        #
+        #     TextInput:
+        #         id: passw
+        #         multiline: False
+
+        Button:
+            text: "Szybka gra"
+            on_release:
+                app.root.current = "second"
+                root.manager.transition.direction = "right"
+        Button:
+            text: "Kariera"
+            on_release:
+                app.root.current = "levels"
+                root.manager.transition.direction = "left"
+
+
+
+<SecondWindow>:
+    name: "second"
+
+
+
+    p1: p1
+    o1: o1
+    p2: p2
+    o2: o2
+    p3: p3
+    o3: o3
+    p4: p4
+    o4: o4
+    mt1: mt1
+
+    # b1: b1
+
+    GridLayout:
+        rows: 6
+        size: root.width, root.height
+        # cols: 2
+        BoxLayout:
+            orientation: 'horizontal'
+            Image:
+                source: 'pythonNeutral.png'
+                # pos_hint: {"x": 0, "top": 1}
+
+            Label:
+                id: mt1
+                text: "Dopasuj kod \nz outputem"
+                color: 41/255, 128/255, 185/255, 1.0
+                # pos_hint:{"center_x":0.5,"center_y":0.9}
+            BoxLayout:
+                orientation: 'vertical'
+                Button:
+                    text: "Start"
+                    background_color: 241/255, 196/255, 15/255,1.0
+                    on_press: root.start()
+                Button:
+                    text: "Sprawdź"
+                    on_press: root.next()
+                    # size_hint_x: None
+                    # width: 80
+                    # size_hint_y: None
+                    # height:50
+                    # pos_hint: {"top":(0.6)}
+                    background_color: 26/255, 188/255, 156/255,1.0
+                Button:
+                    text: "Powrót"
+                    background_color: 1, 0, 0, 1
+                    on_release:
+                        app.root.current = "main"
+                        root.manager.transition.direction = "left"
+
+
+
+
+        BoxLayout:
+            orientation: 'horizontal'
+
+            Button:
+                id: p1
+                on_press: root.colorChange(0)
+                # text_size: self.size
+                # size_hint: 1, None
+                # height: self.texture_size[1]
+            Button:
+                id: o1
+                on_press: root.colorChange(4)
+
+        BoxLayout:
+            orientation: 'horizontal'
+
+            Button:
+                id: p2
+                on_press: root.colorChange(1)
+            Button:
+                id: o2
+                on_press: root.colorChange(5)
+
+        BoxLayout:
+            orientation: 'horizontal'
+
+            Button:
+                id: p3
+                on_press: root.colorChange(2)
+            Button:
+                id: o3
+                on_press: root.colorChange(6)
+        BoxLayout:
+            orientation: 'horizontal'
+
+            Button:
+                id: p4
+                on_press: root.colorChange(3)
+            Button:
+                id: o4
+                on_press: root.colorChange(7)
+        Button:
+            text: "Dalej"
+            background_color: 0, 1, 0, 1
+            on_release:
+                app.root.current = "type2"
+                root.manager.transition.direction = "up"
+
+
+<Type2Window>:
+    name: "type2"
+
+    ti1: ti1
+    mt1: mt1
+
+    GridLayout:
+        rows: 2
+        size: root.width, root.height
+        # cols: 2
+        BoxLayout:
+            orientation: 'horizontal'
+            Image:
+                source: 'pythonNeutral.png'
+                # pos_hint: {"x": 0, "top": 1}
+
+            Label:
+                id: mt1
+                text: "Popraw błędy\nw kodzie"
+                color: 41/255, 128/255, 185/255, 1.0
+                # pos_hint:{"center_x":0.5,"center_y":0.9}
+            BoxLayout:
+                orientation: 'vertical'
+                Button:
+                    text: "Start"
+                    background_color: 241/255, 196/255, 15/255,1.0
+                    on_press: root.start()
+                Button:
+                    text: "Sprawdź"
+                    background_color: 26/255, 188/255, 156/255,1.0
+                    on_press: root.next()
+                Button:
+                    text: "Powrót"
+                    background_color: 1, 0, 0, 1
+                    on_release:
+                        app.root.current = "main"
+                        root.manager.transition.direction = "left"
+        BoxLayout:
+            orientation: 'horizontal'
+            TextInput:
+                id: ti1
+                multiline: True
+
+
+<LevelsWindow>:
+    name: "levels"
+
+    Button:
+        text: "Go Back"
+        on_release:
+            app.root.current = "main"
+            root.manager.transition.direction = "right"
