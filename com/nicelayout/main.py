@@ -32,6 +32,12 @@ class Nauka(Screen):
 class Powtorka(Screen):
     pass
 
+class Ranking(Screen):
+    pass
+
+class MojeKonto(Screen):
+    pass
+
 
 class WindowManager(ScreenManager):
     pass

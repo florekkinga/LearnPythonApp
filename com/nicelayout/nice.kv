@@ -4,6 +4,8 @@ WindowManager:
     Kariera:
     Nauka:
     Powtorka:
+    Ranking:
+    MojeKonto:
 
 <Home>:
     name: "home"
@@ -51,9 +53,27 @@ WindowManager:
                 app.root.current = "powtorka"
                 root.manager.transition.direction = "left"
 
+        ImageButton:
+            pos_hint: {'x':0.05, 'y':-0.3 }
+            size_hint_x: 0.2
+            allow_stretch: True
+            source: "trybkariera.png"
+            on_release:
+                app.root.current = "ranking"
+                root.manager.transition.direction = "left"
+
+        ImageButton:
+            pos_hint: {'x':0.75, 'y':-0.3 }
+            size_hint_x: 0.2
+            allow_stretch: True
+            source: "trybkariera.png"
+            on_release:
+                app.root.current = "mojekonto"
+                root.manager.transition.direction = "left"
+
         Image:
-            pos_hint: {'x': 0.36, 'y':-0.2}
-            size_hint_x: 0.3
+            pos_hint: {'x': 0.33, 'y':-0.24}
+            size_hint_x: 0.35
             allow_stretch: True
             source: "pythonNeutral.png"
 
@@ -86,6 +106,24 @@ WindowManager:
 
 <Powtorka>:
     name: "powtorka"
+
+    Button:
+        text: "Powrót"
+        on_release:
+            app.root.current = "home"
+            root.manager.transition.direction = "right"
+
+<Ranking>:
+    name: "ranking"
+
+    Button:
+        text: "Powrót"
+        on_release:
+            app.root.current = "home"
+            root.manager.transition.direction = "right"
+
+<MojeKonto>:
+    name: "mojekonto"
 
     Button:
         text: "Powrót"
