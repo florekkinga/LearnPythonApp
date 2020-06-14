@@ -1,0 +1,630 @@
+WindowManager:
+    MainWindow:
+    SecondWindow:
+    LevelsWindow:
+    Type2Window:
+    Type3Window:
+    Type4Window:
+    Type5Window:
+    Type6Window:
+    Type7Window:
+    SummaryWindow:
+
+<MainWindow>:
+    name: "main"
+
+    GridLayout:
+        cols: 2
+        rows: 2
+
+        Image:
+            source: 'pythonNeutral.png'
+        Label:
+            text: "Nauka\nPythona"
+            font_size: 50
+            color: 41/255, 128/255, 185/255, 1.0
+        # GridLayout:
+        #     cols: 2
+        #
+        #     Label:
+        #         text: "Password: "
+        #
+        #     TextInput:
+        #         id: passw
+        #         multiline: False
+
+        Button:
+            text: "Szybka gra"
+            on_release:
+                app.root.current = "second"
+                root.manager.transition.direction = "right"
+        Button:
+            text: "Kariera"
+            on_release:
+                app.root.current = "levels"
+                root.manager.transition.direction = "left"
+
+
+
+<SecondWindow>:
+    name: "second"
+    # on_enter: root.load()
+
+
+    p1: p1
+    o1: o1
+    p2: p2
+    o2: o2
+    p3: p3
+    o3: o3
+    p4: p4
+    o4: o4
+    mt1: mt1
+    spr: spr
+
+    # b1: b1
+
+    GridLayout:
+        rows: 6
+        size: root.width, root.height
+        # cols: 2
+        BoxLayout:
+            orientation: 'horizontal'
+            Image:
+                source: 'pythonNeutral.png'
+                # pos_hint: {"x": 0, "top": 1}
+
+            Label:
+                id: mt1
+                text: "Dopasuj kod \nz outputem"
+                color: 41/255, 128/255, 185/255, 1.0
+                # pos_hint:{"center_x":0.5,"center_y":0.9}
+            BoxLayout:
+                orientation: 'vertical'
+                Button:
+                    text: "Start"
+                    background_color: 241/255, 196/255, 15/255,1.0
+                    on_press: root.start()
+                Button:
+                    id: spr
+                    text: "Sprawdź"
+                    disabled: True
+                    on_press: root.next()
+                    # size_hint_x: None
+                    # width: 80
+                    # size_hint_y: None
+                    # height:50
+                    # pos_hint: {"top":(0.6)}
+                    background_color: 26/255, 188/255, 156/255,1.0
+                Button:
+                    text: "Powrót"
+                    background_color: 1, 0, 0, 1
+                    on_release:
+                        app.root.current = "main"
+                        root.manager.transition.direction = "left"
+
+
+
+
+        BoxLayout:
+            orientation: 'horizontal'
+
+            Button:
+                id: p1
+                disabled_color: 0, 0, 0, 1
+                on_press: root.colorChange(0)
+                disabled: True
+                # text_size: self.size
+                # size_hint: 1, None
+                # height: self.texture_size[1]
+            Button:
+                id: o1
+                disabled: True
+                disabled_color: 0, 0, 0, 1
+                on_press: root.colorChange(4)
+
+        BoxLayout:
+            orientation: 'horizontal'
+
+            Button:
+                id: p2
+                disabled: True
+                disabled_color: 0, 0, 0, 1
+                on_press: root.colorChange(1)
+            Button:
+                id: o2
+                disabled: True
+                disabled_color: 0, 0, 0, 1
+                on_press: root.colorChange(5)
+
+        BoxLayout:
+            orientation: 'horizontal'
+
+            Button:
+                id: p3
+                disabled: True
+                disabled_color: 0, 0, 0, 1
+                on_press: root.colorChange(2)
+            Button:
+                id: o3
+                disabled: True
+                disabled_color: 0, 0, 0, 1
+                on_press: root.colorChange(6)
+        BoxLayout:
+            orientation: 'horizontal'
+
+            Button:
+                id: p4
+                disabled: True
+                disabled_color: 0, 0, 0, 1
+                on_press: root.colorChange(3)
+            Button:
+                id: o4
+                disabled: True
+                disabled_color: 0, 0, 0, 1
+                on_press: root.colorChange(7)
+        Button:
+            text: "Dalej"
+            background_color: 0, 1, 0, 1
+            on_release:
+                app.root.current = "type3"
+                root.manager.transition.direction = "up"
+
+
+<Type2Window>:
+    name: "type2"
+
+    ti1: ti1
+    mt1: mt1
+
+    GridLayout:
+        rows: 2
+        size: root.width, root.height
+        # cols: 2
+        BoxLayout:
+            orientation: 'horizontal'
+            Image:
+                source: 'pythonNeutral.png'
+                # pos_hint: {"x": 0, "top": 1}
+
+            Label:
+                id: mt1
+                text: "Popraw błędy\nw kodzie"
+                color: 41/255, 128/255, 185/255, 1.0
+                # pos_hint:{"center_x":0.5,"center_y":0.9}
+            BoxLayout:
+                orientation: 'vertical'
+                Button:
+                    text: "Start"
+                    background_color: 241/255, 196/255, 15/255,1.0
+                    on_press: root.start()
+                Button:
+                    text: "Sprawdź"
+                    background_color: 26/255, 188/255, 156/255,1.0
+                    on_press: root.next()
+                Button:
+                    text: "Dalej"
+                    background_color: 0, 255/255, 0, 1
+                    on_release:
+                        app.root.current = "type4"
+                        root.manager.transition.direction = "left"
+        BoxLayout:
+            orientation: 'horizontal'
+            TextInput:
+                id: ti1
+                multiline: True
+
+<Type3Window>:
+    name: "type3"
+
+    question: question
+    bt: bt
+    bf: bf
+    text: text
+
+    GridLayout:
+        rows: 3
+        size: root.width, root.height
+        # cols: 2
+        BoxLayout:
+            orientation: 'horizontal'
+            Image:
+                source: 'pythonNeutral.png'
+                # pos_hint: {"x": 0, "top": 1}
+
+            Label:
+                id: text
+                text: "Oceń prawdziwość \nponiższego\nstwierdzenia"
+                font_size: 25
+                color: 41/255, 128/255, 185/255, 1.0
+                # pos_hint:{"center_x":0.5,"center_y":0.9}
+            BoxLayout:
+                orientation: 'vertical'
+                Button:
+                    text: "Start"
+                    background_color: 241/255, 196/255, 15/255,1.0
+                    on_press: root.start()
+                Button:
+                    text: "Dalej"
+                    background_color: 0, 255/255, 0, 1
+                    on_release:
+                        app.root.current = "type4"
+                        root.manager.transition.direction = "up"
+        BoxLayout:
+            Label:
+                id: question
+                text: ""
+                color: 100, 100, 100, 1
+        BoxLayout:
+            orientation: 'horizontal'
+            Button:
+                id: bt
+                text: "Prawda"
+                font_size: 40
+                background_color: 0, 255/255, 0, 1
+                on_press: root.check(True)
+            Button:
+                id: bf
+                text: "Fałsz"
+                font_size: 40
+                background_color: 255/255, 0, 0, 1
+                on_press: root.check(False)
+
+<Type4Window>:
+    name: "type4"
+
+    time: time
+    on_enter:
+        root.start()
+    GridLayout:
+        size: root.width, root.height
+        rows: 4
+        BoxLayout:
+            size_hint: 1, 0.5
+            orientation: "horizontal"
+            Label:
+                id: time
+                text: "POZOSTAŁY CZAS: \n00:30"
+                background_color: 0, 1, 1, 1
+                font_size: 40
+                color: 41/255, 128/255, 185/255, 1.0
+                halign: 'center'
+
+            # Label:
+            #     id: points
+            #     text: "TWOJE PUNKTY: \n0"
+            #     background_color: 0, 1, 0, 1
+            #     font_size: 20
+            #     color: 41/255, 128/255, 185/255, 1.0
+            #     halign: 'center'
+            BoxLayout:
+                orientation: 'vertical'
+                Button:
+                    text: "Dalej"
+                    background_color: 0, 255/255, 0, 1
+                    on_release:
+                        app.root.current = "type5"
+                        root.manager.transition.direction = "up"
+
+
+        Label:
+            size_hint: 1, 0.5
+            id: task
+            text: "ZADANIE: \n Zaznacz linię, w ktorej jest sprawdzana długość listy."
+            halign: 'center'
+            color: 41/255, 128/255, 185/255, 1.0
+            font_size: 25
+
+        BoxLayout:
+            size_hint: 1, 2
+            orientation: "vertical"
+
+            BoxLayout:
+                orientation: "horizontal"
+                CheckBox:
+                    id: lineA
+                    group: "group"
+                    text: "A"
+                    on_active: root.answer = self.text
+                Label:
+                    text: "list = [1,2,3,4]"
+                    halign: 'left'
+                    color: 41/255, 128/255, 185/255, 1.0
+
+            BoxLayout:
+                orientation: "horizontal"
+                CheckBox:
+                    id: lineB
+                    group: "group"
+                    text: "B"
+                    on_active: root.answer = self.text
+                Label:
+                    text: "list.append([5,6,7,8])"
+                    halign: 'left'
+                    color: 41/255, 128/255, 185/255, 1.0
+
+            BoxLayout:
+                orientation: "horizontal"
+                CheckBox:
+                    id: lineC
+                    group: "group"
+                    text: "C"
+                    on_active: root.answer = self.text
+                Label:
+                    text: "print len(list)"
+                    halign: 'left'
+                    color: 41/255, 128/255, 185/255, 1.0
+            BoxLayout:
+                orientation: "horizontal"
+                CheckBox:
+                    id: lineD
+                    text: "D"
+                    group: "group"
+                    on_active: root.answer = self.text
+                Label:
+                    text: "print(list)"
+                    halign: 'left'
+                    color: 41/255, 128/255, 185/255, 1.0
+
+        BoxLayout:
+            size_hint: 1, 0.5
+            orientation: "horizontal"
+            Button:
+                text: "ZATWIERDŹ"
+                background_color: 0, 1, 0, 1
+                font_size: 25
+                on_press: root.checkAnswer()
+
+<Type5Window>:
+    name: 'type5'
+    on_enter: root.start1()
+
+    video: video
+    # points: points
+    time: time
+    confirm: confirm
+    textA: textA
+    textB: textB
+    textC: textC
+    taskText: taskText
+    answerA: answerA
+    answerB: answerB
+    answerC: answerC
+
+    GridLayout:
+        rows: 4
+        size: root.width, root.height
+        BoxLayout:
+            orientation: 'horizontal'
+            # Label:
+            #     id: points
+            #     # pos_hint:{"x":-0.45,"y":0.48}
+            #     text: "POINTS: 0"
+            #     color: 41/255, 128/255, 185/255, 1.0
+
+            Video:
+                id: video
+                source: "bubble_sort.gif"
+                state: "play"
+                keep_ratio: True
+                allow_stretch: False
+                size_hint: 1, 1
+            Label:
+                id: time
+                # pos_hint:{"x": 0.47, "y":0.48}
+                text: "00:30"
+                color: 41/255, 128/255, 185/255, 1.0
+                font_size: 40
+        Label:
+            id: taskText
+            # pos_hint:{"x":-0.05,"y":0.1}
+            text: "Zadanie: Na podstawie filmiku wybierz odpowiedź A, B, C.\nPrzedstawiona animacja obrazuje sortowanie:"
+            color: 41/255, 128/255, 185/255, 1.0
+
+        BoxLayout:
+            orientation: "vertical"
+            # size_hint: (1, 0.3)
+            # pos_hint:{"y": 0.25, "x": -0.3}
+
+            BoxLayout:
+                orientation: 'horizontal'
+                Label:
+                    text: "A)"
+                    # pos_hint:{"x": -0.33, "y":0}
+                    color: 41/255, 128/255, 185/255, 1.0
+                CheckBox:
+                    id: answerA
+                    group: "group"
+                    text: "A"
+                    on_active: root.answer = self.text
+                Label:
+                    id: textA
+                    size_hint: 1.9, 1
+                    text: "Sortowanie przez wstawianie"
+                    # pos_hint:{"x": -0.15, "y":0}
+                    color: 41/255, 128/255, 185/255, 1.0
+            BoxLayout:
+                orientation: 'horizontal'
+                Label:
+                    text: "B)"
+                    # pos_hint:{"x": -0.33, "y":-0.1}
+                    color: 41/255, 128/255, 185/255, 1.0
+                CheckBox:
+                    id: answerB
+                    group: "group"
+                    text: "B"
+                    on_active: root.answer = self.text
+                Label:
+                    id: textB
+                    size_hint: 1.9, 1
+                    text: "Sortowanie bąbelkowe"
+                    # pos_hint:{"x": -0.15, "y":-0.1}
+                    color: 41/255, 128/255, 185/255, 1.0
+            BoxLayout:
+                orientation: 'horizontal'
+                Label:
+                    text: "C)"
+                    # pos_hint:{"x": -0.33, "y":-0.2}
+                    color: 41/255, 128/255, 185/255, 1.0
+                CheckBox:
+                    id: answerC
+                    group: "group"
+                    text: "C"
+                    on_active: root.answer = self.text
+                Label:
+                    id: textC
+                    size_hint: 1.9, 1
+                    text: "Sortowanie przez scalanie"
+                    # pos_hint:{"x": -0.15, "y":-0.2}
+                    color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: 'horizontal'
+            Button:
+                id: confirm
+                # size_hint: None, None
+                # size: 75, 50
+                # pos_hint: {"x": 0.47, "y": 0.1}
+                text: "Następne"
+                on_press: root.update(video)
+            Button:
+                text: "Dalej"
+                background_color: 0, 255/255, 0, 1
+                on_release:
+                    app.root.current = "type6"
+                    root.manager.transition.direction = "up"
+
+<Type6Window>:
+    name: "type6"
+    on_enter: root.start()
+    time: time
+    GridLayout:
+        rows: 4
+
+        BoxLayout:
+            size_hint: 1, 0.5
+            orientation: "horizontal"
+            Label:
+                id: time
+                text: "POZOSTAŁY CZAS: \n00:30"
+                background_color: 0, 1, 1, 1
+                font_size: 20
+                color: 41/255, 128/255, 185/255, 1.0
+                halign: 'center'
+
+            Button:
+                text: "Dalej"
+                background_color: 0, 255/255, 0, 1
+                on_release:
+                    app.root.current = "type7"
+                    root.manager.transition.direction = "up"
+
+        Label:
+            size_hint: 1, 0.5
+            id: task
+            text: "ZADANIE: \n Podaj jaki output zostanie wypisany po wykonaniu się poniższego kodu."
+            halign: 'center'
+            color: 41/255, 128/255, 185/255, 1.0
+            font_size: 20
+
+        BoxLayout:
+            size_hint: 1, 2
+            orientation: "vertical"
+
+            Label:
+                # text: "a = True \nb = False \nc = False \n\nif not a or b: \n     print 1 \nelif not a or not b and c: \n     print 2 \nelif not a or b or not b and a: \n     print 3 \nelse: \n     print 4"
+                text: "list = [1,2,3,4] \nlist.append([5,6,7,8]) \nprint len(list) \nprint(list)"
+                color: 41/255, 128/255, 185/255, 1.0
+                font_size: 20
+
+        BoxLayout:
+            size_hint: 1, 1
+            orientation: "horizontal"
+            TextInput:
+                id: input
+                hint_text: "Tutaj wpisz swoją odpowiedź"
+                font_size: 20
+            Button:
+                text: "ZATWIERDŹ"
+                background_color: 0, 1, 0, 1
+                font_size: 25
+                on_press: root.checkAnswer()
+
+<Type7Window>:
+    name: "type7"
+    on_enter: root.build()
+    time: time
+    input: input
+    confirm: confirm
+
+    GridLayout:
+        rows: 5
+        size: root.width, root.height
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint: 1, 0.1
+            Label:
+                id: time
+                text: "00:30"
+                color: 41/255, 128/255, 185/255, 1.0
+            BoxLayout:
+                orientation: "horizontal"
+                Button:
+                    id: confirm
+                    text: "Sprawdź"
+                    on_press: root.checkAnswer()
+                Button:
+                    text: "Dalej"
+                    background_color: 0, 255/255, 0, 1
+                    on_release:
+                        app.root.current = "summary"
+                        root.manager.transition.direction = "up"
+        BoxLayout:
+            orientation: "vertical"
+            Label:
+                text: "ZADANIE: \n W jakiej kolejnosci powinien wykonac sie kod?"
+                halign: 'center'
+                color: 41/255, 128/255, 185/255, 1.0
+                font_size: 23
+
+            Label:
+                text: "1. less = []\n2.    greater = []\n3.def sort(array=[12,4,5,6,7,3,1,15]):\n4.        pivot = array[0]\n5.    equal = []\n6.    if len(array) > 1:\n7.                less.append(x)\n8.        for x in array:\n9.           if x < pivot:\n10.                equal.append(x)\n11.            elif x > pivot:\n12.            elif x == pivot:\n13.                greater.append(x)\n14.    else:\n15.        return sort(less)+equal+sort(greater)\n16.        return array"
+                font_size: 15
+                color: 41/255, 128/255, 185/255, 1.0
+                size_hint: 1, 2
+
+            TextInput:
+                id: input
+                size_hint: 1, 0.5
+                multiline: False
+
+
+<SummaryWindow>:
+    name: "summary"
+    imID: imID
+    txtID: txtID
+    on_enter: root.start()
+    BoxLayout:
+        orientation: "vertical"
+        Image:
+            id: imID
+            size_hint: 1, 2
+        Label:
+            id: txtID
+            color: 41/255, 128/255, 185/255, 1.0
+            size_hint: 1, 0.5
+        Button:
+            text: "Zakończ"
+            size_hint: 1, 0.5
+            background_color: 255/255, 0, 0, 1
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "up"
+
+<LevelsWindow>:
+    name: "levels"
+
+    Button:
+        text: "Go Back"
+        on_release:
+            app.root.current = "main"
+            root.manager.transition.direction = "right"
