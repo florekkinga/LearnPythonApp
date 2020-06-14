@@ -1,0 +1,94 @@
+WindowManager:
+    Home:
+    SzybkaGra:
+    Kariera:
+    Nauka:
+    Powtorka:
+
+<Home>:
+    name: "home"
+
+    FloatLayout:
+        Label:
+            text: "LearnPythonApp"
+            pos_hint: {'x': 0, 'y':0.45}
+            font_size: 50
+            color: 41/255, 128/255, 185/255, 1.0
+
+        ImageButton:
+            pos_hint: {'x':0.1, 'y':0 }
+            size_hint_x: 0.2
+            allow_stretch: True
+            source: "szybkagra.png"
+            on_release:
+                app.root.current = "szybkagra"
+                root.manager.transition.direction = "left"
+
+        ImageButton:
+            pos_hint: {'x':0.28, 'y':0.2 }
+            size_hint_x: 0.2
+            allow_stretch: True
+            source: "trybkariera.png"
+            on_release:
+                app.root.current = "kariera"
+                root.manager.transition.direction = "left"
+
+        ImageButton:
+            pos_hint: {'x':0.52, 'y':0.2 }
+            size_hint_x: 0.2
+            allow_stretch: True
+            source: "nauka.png"
+            on_release:
+                app.root.current = "nauka"
+                root.manager.transition.direction = "left"
+
+        ImageButton:
+            pos_hint: {'x':0.7, 'y':0 }
+            size_hint_x: 0.2
+            allow_stretch: True
+            source: "powtorka.png"
+            on_release:
+                app.root.current = "powtorka"
+                root.manager.transition.direction = "left"
+
+        Image:
+            pos_hint: {'x': 0.36, 'y':-0.2}
+            size_hint_x: 0.3
+            allow_stretch: True
+            source: "pythonNeutral.png"
+
+<SzybkaGra>:
+    name: "szybkagra"
+
+    Button:
+        text: "Powrót"
+        on_release:
+            app.root.current = "home"
+            root.manager.transition.direction = "right"
+
+<Kariera>:
+    name: "kariera"
+
+    Button:
+        text: "Powrót"
+        on_release:
+            app.root.current = "home"
+            root.manager.transition.direction = "right"
+
+<Nauka>:
+    name: "nauka"
+
+    Button:
+        text: "Powrót"
+        on_release:
+            app.root.current = "home"
+            root.manager.transition.direction = "right"
+
+<Powtorka>:
+    name: "powtorka"
+
+    Button:
+        text: "Powrót"
+        on_release:
+            app.root.current = "home"
+            root.manager.transition.direction = "right"
