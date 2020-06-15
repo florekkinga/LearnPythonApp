@@ -8,6 +8,7 @@ WindowManager:
     Type5Window:
     Type6Window:
     Type7Window:
+    Type8Window:
     SummaryWindow:
 
 <MainWindow>:
@@ -576,7 +577,7 @@ WindowManager:
                     text: "Dalej"
                     background_color: 0, 255/255, 0, 1
                     on_release:
-                        app.root.current = "summary"
+                        app.root.current = "type8"
                         root.manager.transition.direction = "up"
         BoxLayout:
             orientation: "vertical"
@@ -596,6 +597,91 @@ WindowManager:
                 id: input
                 size_hint: 1, 0.5
                 multiline: False
+
+<Type8Window>:
+    name: "type8"
+    on_enter: root.build()
+
+    cb1: cb1
+    cb2: cb2
+    cb3: cb3
+    cb4: cb4
+    cb5: cb5
+    cb6: cb6
+    cb7: cb7
+
+    GridLayout:
+        rows: 10
+        Label:
+            text: "Zaznacz odpowiedzi które dotyczą obrazka.\nMoże być więcej niż jedna prawidłowa odpowiedź."
+            color: 41/255, 128/255, 185/255, 1.0
+        Image:
+            source: "sort.png"
+            size_hint: 1, 2
+
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb1
+            Label:
+                text: "Sortowanie bąbelkowe"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb2
+            Label:
+                text: "Sortowanie przez wstawianie"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb3
+            Label:
+                text: "Sortowanie przez wybieranie"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb4
+            Label:
+                text: "Złożoność O(logn)"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb5
+            Label:
+                text: "Złożoność O(n)"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb6
+            Label:
+                text: "Złożoność O(n^2)"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb7
+            Label:
+                text: "Złożoność O(nlogn)"
+                color: 41/255, 128/255, 185/255, 1.0
+
+        BoxLayout:
+            orientation: "horizontal"
+            Button:
+                text:"Sprawdź"
+                on_press: root.check()
+            Button:
+                text: "Dalej"
+                background_color: 0, 255/255, 0, 1
+                on_release:
+                    app.root.current = "summary"
+                    root.manager.transition.direction = "up"
+
+
 
 
 <SummaryWindow>:

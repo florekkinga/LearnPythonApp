@@ -4,7 +4,7 @@ import points
 
 class SummaryWindow(Screen):
     def start(self):
-        if points.globalPoint > 4:
+        if points.globalPoint > 6:
             self.imID.source = "pythonHappy.png"
         else:
             self.imID.source = "pythonSad.png"
