@@ -1,6 +1,10 @@
-<rootWidget>:
+<RootWidget>:
 
     time: time
+    points: points
+    confirm: confirm
+    key: key
+    info: info
 
     Label:
         id: points
@@ -14,6 +18,7 @@
         text: "00:30"
 
     Label:
+        id: info
         pos_hint: {"x": 0, "y":0.4}
         text: "ZADANIE: \nUzupelnij kod"
         halign: 'center'
@@ -26,11 +31,12 @@
         size: 75, 50
         pos_hint: {"x": 0.47, "y": 0.1}
         text: "Dalej"
-        on_press: root.checkAnswer
+        on_press: root.checkAnswer(key)
 
 
     TextInput:
-        text: "def sort(array=[12,4,5,6,7,3,1,15]):\self#tutaj wpisz kod\self    equal = []\self    greater = []\self #tutaj wpisz kod\self        pivot = array[0]\self        for x in array:\self#tutaj wpisz kod\self\self\self\self        return sort(less)+equal+sort(greater)\self    else:\self        return array\self"
+        id: key
+        text: "#Napisz funkcje factorial, ktora przyjmuje parametr n \n#oraz oblicza z niego silnie\n\ndef factorial(n):"
         font_size: 13
         pos_hint: {"x": 0.27, "y":0.2}
         size_hint: None, None,
