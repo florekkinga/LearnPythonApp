@@ -6,7 +6,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.core.window import Window
 from kivy.uix.floatlayout import FloatLayout
 import random
-import type1, type2, type3, type4, type5, type6, type7, summary
+import type1, type2, type3, type4, type5, type6, type7, type8, summary
 
 Window.clearcolor = (1, 1, 1, 1)
 
