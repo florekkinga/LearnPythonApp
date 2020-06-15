@@ -6,6 +6,9 @@ WindowManager:
     Powtorka:
     Ranking:
     MojeKonto:
+    Easy:
+    Medium:
+    Hard:
 
 <Home>:
     name: "home"
@@ -22,7 +25,10 @@ WindowManager:
             size_hint_x: 0.2
             allow_stretch: True
             source: "szybkagra.png"
+            on_press:
+                self.source = "szybkagraonpress.png"
             on_release:
+                self.source = "szybkagra.png"
                 app.root.current = "szybkagra"
                 root.manager.transition.direction = "left"
 
@@ -30,8 +36,11 @@ WindowManager:
             pos_hint: {'x':0.28, 'y':0.2 }
             size_hint_x: 0.2
             allow_stretch: True
-            source: "trybkariera.png"
+            source: "trubkariera.png"
+            on_press:
+                self.source = "trybkarieraonpress.png"
             on_release:
+                self.source = "trubkariera.png"
                 app.root.current = "kariera"
                 root.manager.transition.direction = "left"
 
@@ -40,7 +49,10 @@ WindowManager:
             size_hint_x: 0.2
             allow_stretch: True
             source: "nauka.png"
+            on_press:
+                self.source = "naukaonpress.png"
             on_release:
+                self.source = "nauka.png"
                 app.root.current = "nauka"
                 root.manager.transition.direction = "left"
 
@@ -49,7 +61,10 @@ WindowManager:
             size_hint_x: 0.2
             allow_stretch: True
             source: "powtorka.png"
+            on_press:
+                self.source = "powtorkaonpress.png"
             on_release:
+                self.source = "powtorka.png"
                 app.root.current = "powtorka"
                 root.manager.transition.direction = "left"
 
@@ -57,8 +72,11 @@ WindowManager:
             pos_hint: {'x':0.05, 'y':-0.3 }
             size_hint_x: 0.2
             allow_stretch: True
-            source: "trybkariera.png"
+            source: "ranking.png"
+            on_press:
+                self.source = "rankingonpress.png"
             on_release:
+                self.source = "ranking.png"
                 app.root.current = "ranking"
                 root.manager.transition.direction = "left"
 
@@ -66,8 +84,11 @@ WindowManager:
             pos_hint: {'x':0.75, 'y':-0.3 }
             size_hint_x: 0.2
             allow_stretch: True
-            source: "trybkariera.png"
+            source: "mojekonto.png"
+            on_press:
+                self.source = "mojekontoonpress.png"
             on_release:
+                self.source = "mojekonto.png"
                 app.root.current = "mojekonto"
                 root.manager.transition.direction = "left"
 
@@ -81,7 +102,7 @@ WindowManager:
     name: "szybkagra"
 
     Button:
-        text: "Powrót"
+        text: "Powrót Szybka Gra"
         on_release:
             app.root.current = "home"
             root.manager.transition.direction = "right"
@@ -89,17 +110,74 @@ WindowManager:
 <Kariera>:
     name: "kariera"
 
-    Button:
-        text: "Powrót"
-        on_release:
-            app.root.current = "home"
-            root.manager.transition.direction = "right"
+    FloatLayout:
+
+        Label:
+            text: "Tryb Kariera"
+            pos_hint: {'x': 0, 'y':0.45}
+            font_size: 50
+            color: 41/255, 128/255, 185/255, 1.0
+
+        ImageButton:
+            pos_hint: {'x':0.1, 'y':0 }
+            size_hint_x: 0.2
+            allow_stretch: True
+            source: "easyw.png"
+            on_press:
+                self.source = "easy.png"
+            on_release:
+                self.source = "easyw.png"
+                app.root.current = "easy"
+                root.manager.transition.direction = "left"
+
+        ImageButton:
+            pos_hint: {'x':0.28, 'y':0.2 }
+            size_hint_x: 0.2
+            allow_stretch: True
+            source: "medium.png"
+            on_press:
+                self.source = "mediumonpress.png"
+            on_release:
+                self.source = "medium.png"
+                app.root.current = "medium"
+                root.manager.transition.direction = "left"
+
+        ImageButton:
+            pos_hint: {'x':0.52, 'y':0.2 }
+            size_hint_x: 0.2
+            allow_stretch: True
+            source: "hard.png"
+            on_press:
+                self.source = "hardonpress.png"
+            on_release:
+                self.source = "hard.png"
+                app.root.current = "hard"
+                root.manager.transition.direction = "left"
+
+        ImageButton:
+            pos_hint: {'x':0.7, 'y':0 }
+            size_hint_x: 0.2
+            allow_stretch: True
+            source: "powrot.png"
+            on_press:
+                self.source = "powrotonpress.png"
+            on_release:
+                self.source = "powrot.png"
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+
+        Image:
+            pos_hint: {'x': 0.33, 'y':-0.24}
+            size_hint_x: 0.35
+            allow_stretch: True
+            source: "pythonNeutral.png"
+
 
 <Nauka>:
     name: "nauka"
 
     Button:
-        text: "Powrót"
+        text: "Powrót Nauka"
         on_release:
             app.root.current = "home"
             root.manager.transition.direction = "right"
@@ -108,7 +186,7 @@ WindowManager:
     name: "powtorka"
 
     Button:
-        text: "Powrót"
+        text: "Powrót Powtórka"
         on_release:
             app.root.current = "home"
             root.manager.transition.direction = "right"
@@ -117,7 +195,7 @@ WindowManager:
     name: "ranking"
 
     Button:
-        text: "Powrót"
+        text: "Powrót Ranking"
         on_release:
             app.root.current = "home"
             root.manager.transition.direction = "right"
@@ -126,7 +204,34 @@ WindowManager:
     name: "mojekonto"
 
     Button:
-        text: "Powrót"
+        text: "Powrót Moje Konto"
         on_release:
             app.root.current = "home"
+            root.manager.transition.direction = "right"
+
+<Easy>:
+    name: "easy"
+
+    Button:
+        text: "Powrót Easy"
+        on_release:
+            app.root.current = "kariera"
+            root.manager.transition.direction = "right"
+
+<Medium>:
+    name: "medium"
+
+    Button:
+        text: "Powrót Medium"
+        on_release:
+            app.root.current = "kariera"
+            root.manager.transition.direction = "right"
+
+<Hard>:
+    name: "hard"
+
+    Button:
+        text: "Powrót Hard"
+        on_release:
+            app.root.current = "kariera"
             root.manager.transition.direction = "right"
