@@ -1,4 +1,13 @@
 WindowManager:
+    Home:
+    Kariera:
+    Nauka:
+    Powtorka:
+    Ranking:
+    MojeKonto:
+    Easy:
+    Medium:
+    Hard:
     MainWindow:
     SecondWindow:
     LevelsWindow:
@@ -11,41 +20,94 @@ WindowManager:
     Type8Window:
     SummaryWindow:
 
-<MainWindow>:
-    name: "main"
 
-    GridLayout:
-        cols: 2
-        rows: 2
+<Home>:
+    name: "home"
 
-        Image:
-            source: 'pythonNeutral.png'
+    FloatLayout:
         Label:
-            text: "Nauka\nPythona"
+            text: "LearnPythonApp"
+            pos_hint: {'x': 0, 'y':0.45}
             font_size: 50
             color: 41/255, 128/255, 185/255, 1.0
-        # GridLayout:
-        #     cols: 2
-        #
-        #     Label:
-        #         text: "Password: "
-        #
-        #     TextInput:
-        #         id: passw
-        #         multiline: False
 
-        Button:
-            text: "Szybka gra"
+        ImageButton:
+            pos_hint: {'x':0.52, 'y':0.2 }
+            size_hint_x: 0.2
+            allow_stretch: True
+            source: "szybkagra.png"
+            on_press:
+                self.source = "szybkagraonpress.png"
             on_release:
+                self.source = "szybkagra.png"
                 app.root.current = "second"
-                root.manager.transition.direction = "right"
-        Button:
-            text: "Kariera"
-            on_release:
-                app.root.current = "levels"
                 root.manager.transition.direction = "left"
 
+        ImageButton:
+            pos_hint: {'x':0.28, 'y':0.2 }
+            size_hint_x: 0.2
+            allow_stretch: True
+            source: "trubkariera.png"
+            on_press:
+                self.source = "trybkarieraonpress.png"
+            on_release:
+                self.source = "trubkariera.png"
+                app.root.current = "kariera"
+                root.manager.transition.direction = "left"
 
+        ImageButton:
+            pos_hint: {'x':0.1, 'y':0 }
+            size_hint_x: 0.2
+            allow_stretch: True
+            source: "nauka.png"
+            on_press:
+                self.source = "naukaonpress.png"
+            on_release:
+                self.source = "nauka.png"
+                app.root.current = "nauka"
+                root.manager.transition.direction = "left"
+
+        ImageButton:
+            pos_hint: {'x':0.7, 'y':0 }
+            size_hint_x: 0.2
+            allow_stretch: True
+            source: "powtorka.png"
+            on_press:
+                self.source = "powtorkaonpress.png"
+            on_release:
+                self.source = "powtorka.png"
+                app.root.current = "powtorka"
+                root.manager.transition.direction = "left"
+
+        ImageButton:
+            pos_hint: {'x':0.05, 'y':-0.3 }
+            size_hint_x: 0.2
+            allow_stretch: True
+            source: "ranking.png"
+            on_press:
+                self.source = "rankingonpress.png"
+            on_release:
+                self.source = "ranking.png"
+                app.root.current = "ranking"
+                root.manager.transition.direction = "left"
+
+        ImageButton:
+            pos_hint: {'x':0.75, 'y':-0.3 }
+            size_hint_x: 0.2
+            allow_stretch: True
+            source: "mojekonto.png"
+            on_press:
+                self.source = "mojekontoonpress.png"
+            on_release:
+                self.source = "mojekonto.png"
+                app.root.current = "mojekonto"
+                root.manager.transition.direction = "left"
+
+        Image:
+            pos_hint: {'x': 0.33, 'y':-0.24}
+            size_hint_x: 0.35
+            allow_stretch: True
+            source: "pythonNeutral.png"
 
 <SecondWindow>:
     name: "second"
@@ -101,7 +163,7 @@ WindowManager:
                     text: "Powrót"
                     background_color: 1, 0, 0, 1
                     on_release:
-                        app.root.current = "main"
+                        app.root.current = "home"
                         root.manager.transition.direction = "left"
 
 
@@ -683,7 +745,6 @@ WindowManager:
 
 
 
-
 <SummaryWindow>:
     name: "summary"
     imID: imID
@@ -712,5 +773,135 @@ WindowManager:
     Button:
         text: "Go Back"
         on_release:
-            app.root.current = "main"
+            app.root.current = "home"
+            root.manager.transition.direction = "right"
+
+
+<Kariera>:
+    name: "kariera"
+
+    FloatLayout:
+
+        Label:
+            text: "Tryb Kariera"
+            pos_hint: {'x': 0, 'y':0.45}
+            font_size: 50
+            color: 41/255, 128/255, 185/255, 1.0
+
+        ImageButton:
+            pos_hint: {'x':0.1, 'y':0 }
+            size_hint_x: 0.2
+            allow_stretch: True
+            source: "easyw.png"
+            on_press:
+                self.source = "easy.png"
+            on_release:
+                self.source = "easyw.png"
+                app.root.current = "easy"
+                root.manager.transition.direction = "left"
+
+        ImageButton:
+            pos_hint: {'x':0.28, 'y':0.2 }
+            size_hint_x: 0.2
+            allow_stretch: True
+            source: "medium.png"
+            on_press:
+                self.source = "mediumonpress.png"
+            on_release:
+                self.source = "medium.png"
+                app.root.current = "medium"
+                root.manager.transition.direction = "left"
+
+        ImageButton:
+            pos_hint: {'x':0.52, 'y':0.2 }
+            size_hint_x: 0.2
+            allow_stretch: True
+            source: "hard.png"
+            on_press:
+                self.source = "hardonpress.png"
+            on_release:
+                self.source = "hard.png"
+                app.root.current = "hard"
+                root.manager.transition.direction = "left"
+
+        ImageButton:
+            pos_hint: {'x':0.7, 'y':0 }
+            size_hint_x: 0.2
+            allow_stretch: True
+            source: "powrot.png"
+            on_press:
+                self.source = "powrotonpress.png"
+            on_release:
+                self.source = "powrot.png"
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+
+        Image:
+            pos_hint: {'x': 0.33, 'y':-0.24}
+            size_hint_x: 0.35
+            allow_stretch: True
+            source: "pythonNeutral.png"
+
+
+<Nauka>:
+    name: "nauka"
+
+    Button:
+        text: "Powrót Nauka"
+        on_release:
+            app.root.current = "home"
+            root.manager.transition.direction = "right"
+
+<Powtorka>:
+    name: "powtorka"
+
+    Button:
+        text: "Powrót Powtórka"
+        on_release:
+            app.root.current = "home"
+            root.manager.transition.direction = "right"
+
+<Ranking>:
+    name: "ranking"
+
+    Button:
+        text: "Powrót Ranking"
+        on_release:
+            app.root.current = "home"
+            root.manager.transition.direction = "right"
+
+<MojeKonto>:
+    name: "mojekonto"
+
+    Button:
+        text: "Powrót Moje Konto"
+        on_release:
+            app.root.current = "home"
+            root.manager.transition.direction = "right"
+
+<Easy>:
+    name: "easy"
+
+    Button:
+        text: "Powrót Easy"
+        on_release:
+            app.root.current = "kariera"
+            root.manager.transition.direction = "right"
+
+<Medium>:
+    name: "medium"
+
+    Button:
+        text: "Powrót Medium"
+        on_release:
+            app.root.current = "kariera"
+            root.manager.transition.direction = "right"
+
+<Hard>:
+    name: "hard"
+
+    Button:
+        text: "Powrót Hard"
+        on_release:
+            app.root.current = "kariera"
             root.manager.transition.direction = "right"

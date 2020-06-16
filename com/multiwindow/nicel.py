@@ -1,7 +1,6 @@
 import kivy
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, Screen
-# from com.nicelayout.home import Home
 from kivy.uix.button import ButtonBehavior
 from kivy.uix.image import Image
 from kivy.core.window import Window
