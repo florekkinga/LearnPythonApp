@@ -3,6 +3,8 @@ from kivy.properties import ObjectProperty
 from kivy.uix.floatlayout import FloatLayout
 from kivy.clock import Clock
 
+from past.builtins import execfile
+
 
 class RootWidget(FloatLayout):
     key = ObjectProperty(None)
@@ -10,6 +12,8 @@ class RootWidget(FloatLayout):
     start = 0
 
     def checkAnswer(self, btn):
+        activate_this_file = '/home/radoslaw/PycharmProjects/LearnPythonApp/venv/bin/activate_this.py'
+        execfile(activate_this_file, dict(__file__=activate_this_file))
         e = "global factorial"
         e += self.ids.key.text
         e += "\n\n\na = factorial(5)\nout=open('test.txt', 'w')\nout.write(str(a))\nout.close()"

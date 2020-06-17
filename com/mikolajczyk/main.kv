@@ -19,7 +19,7 @@
 
     Video:
         id: video
-        source: "bubble_sort.gif"
+        source:
         state: "play"
         keep_ratio: True
         allow_stretch: False
@@ -28,7 +28,7 @@
     Label:
         id: taskText
         pos_hint:{"x":-0.05,"y":0.1}
-        text: "Zadanie: Na podstawie filmiku wybierz odpowiedź A, B, C. Przedstawiona animacja obrazuje sortowanie:"
+        text:
 
     Label:
         id: time
@@ -55,15 +55,15 @@
 
     Label:
         id: textA
-        text: "Sortowanie przez wstawianie"
+        text:
         pos_hint:{"x": -0.15, "y":0}
     Label:
         id: textB
-        text: "Sortowanie bąbelkowe"
+        text:
         pos_hint:{"x": -0.15, "y":-0.1}
     Label:
         id: textC
-        text: "Sortowanie przez scalanie"
+        text:
         pos_hint:{"x": -0.15, "y":-0.2}
 
     BoxLayout:
@@ -74,15 +74,15 @@
         CheckBox:
             id: answerA
             group: "group"
-            text: "A"
+            text: 'A'
             on_active: root.answer = self.text
         CheckBox:
             id: answerB
             group: "group"
-            text: "B"
+            text: 'B'
             on_active: root.answer = self.text
         CheckBox:
             id: answerC
             group: "group"
-            text: "C"
+            text: 'C'
             on_active: root.answer = self.text
