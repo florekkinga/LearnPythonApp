@@ -1,0 +1,19 @@
+Do wczytania danych z klawiatury służy funkcja output();False
+Aby połączyć wyrażenia warunkowe w Pythonie należy użyć znaków &&;False
+W języku Python definicja funkcji powinna zaczynać się od 'def';True
+W języku Python do mnożenia używamy operatora **;False
+W Pythonie linię możemy zakomentować znakiem %;False
+Python nie jest językiem interpretowanym;False
+W metodach klasy używamy argumentu 'self';True
+Do wykonania operacji modulo używamy operatora '%';True
+Typ zmiennej w Pythonie, która przyjmuje wartości 'True' lub 'False' to bool;False
+W Pythonie nie jest możliwe stworzenie funkcji o zmiennej liczbie argumentów;False
+Język Python pozwala na przypisanie zmiennej wartości inf;True
+Python jest obecnie najpopularniejszym językiem programowania;True
+W kodzie Pythona nie jest rozróżniana wielkość liter;False
+Język nie pozwala na automatyczne zarządzanie pamięcią;False
+Możliwa jest konwersja liczby na string i odwrotnie;True
+Jedyną dostępną pętlą w Pythonie jest pętla for;False
+Krotki są niemutowalne (niezmienialne);True
+Metoda split() tworzy listę słów z danego stringa;True
+Metoda sqrt() nie wymaga zaimportowania dodatkowej biblioteki;False
