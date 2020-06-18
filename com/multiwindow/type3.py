@@ -34,12 +34,12 @@ class Type3Window(Screen):
         pressedButton[0][1] = self.bt
         pressedButton[1][1] = self.bf
 
-        ran = random.choice(range(len(baseTrueFalse)))
-        self.question.text = baseTrueFalse[ran][0]
+        ran = random.choice(range(len(base)))
+        self.question.text = base[ran][0]
 
     def check(self, instance):
         global ran
-        if (instance == True and baseTrueFalse[ran][1] == "True\n") or (instance == False and baseTrueFalse[ran][1] == "False\n"):
+        if (instance == True and base[ran][1] == "True\n") or (instance == False and base[ran][1] == "False\n"):
             self.text.text = "Wybrałeś dobrze"
             points.globalPoint += 1
         else:
