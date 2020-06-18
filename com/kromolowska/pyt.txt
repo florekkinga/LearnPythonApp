@@ -1,0 +1,17 @@
+pytanie
+Zaznacz odpowiedzi które dotyczą obrazka. Może być więcej niż jedna prawidłowa odpowiedź.
+Sortowanie bąbelkowe
+Sortowanie przez wstawianie
+Sortowaie przez wybieranie
+Złożoność O(logn)
+Złożoność O(n)
+Złożoność O(n^2)
+Złożoność O(nlogn)
+pytanie
+Jaki będzie wynik wywołania max("please help ')?
+s
+spacja 
+e
+p 
+Funkcja max zwraca maksymalny, czyli ostatni element napisu
+Funkcja max zwraca maksymalny element napisu, czyli taki o najwyższej wartości

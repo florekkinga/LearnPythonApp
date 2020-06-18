@@ -1,0 +1,478 @@
+<Type8Window>:
+    name: "type8"
+    on_enter: root.build()
+
+    cb1: cb1
+    cb2: cb2
+    cb3: cb3
+    cb4: cb4
+    cb5: cb5
+    cb6: cb6
+    cb7: cb7
+
+    GridLayout:
+        rows: 10
+        Label:
+            text: "Zaznacz odpowiedzi które dotyczą obrazka.\nMoże być więcej niż jedna prawidłowa odpowiedź."
+            color: 41/255, 128/255, 185/255, 1.0
+        Image:
+            source: "sort.png"
+            size_hint: 1, 2
+
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb1
+            Label:
+                text: "Sortowanie bąbelkowe"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb2
+            Label:
+                text: "Sortowanie przez wstawianie"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb3
+            Label:
+                text: "Sortowanie przez wybieranie"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb4
+            Label:
+                text: "Złożoność O(logn)"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb5
+            Label:
+                text: "Złożoność O(n)"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb6
+            Label:
+                text: "Złożoność O(n^2)"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb7
+            Label:
+                text: "Złożoność O(nlogn)"
+                color: 41/255, 128/255, 185/255, 1.0
+
+        BoxLayout:
+            orientation: "horizontal"
+            Button:
+                text:"Sprawdź"
+                on_press: root.check()
+            Button:
+                text: "Dalej"
+                background_color: 0, 255/255, 0, 1
+                on_release:
+                    app.root.current = "summary"
+                    root.manager.transition.direction = "up"
+
+<Type81Window>:
+    name: "type81"
+    on_enter: root.build()
+
+    cb1: cb1
+    cb2: cb2
+    cb3: cb3
+    cb4: cb4
+    cb5: cb5
+    cb6: cb6
+
+    GridLayout:
+        rows: 10
+        Label:
+            text: "Jaki będzie wynik wywołania max("please help ')?"
+            color: 41/255, 128/255, 185/255, 1.0
+
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb1
+            Label:
+                text: "s"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb2
+            Label:
+                text: " <- spacja"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb3
+            Label:
+                text: "e"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb4
+            Label:
+                text: "p"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb5
+            Label:
+                text: "Funkcja max zwraca maksymalny, czyli ostatni element napisu"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb6
+            Label:
+                text: "Funkcja max zwraca maksymalny element napisu, czyli taki o najwyższej wartości"
+                color: 41/255, 128/255, 185/255, 1.0
+
+        BoxLayout:
+            orientation: "horizontal"
+            Button:
+                text:"Sprawdź"
+                on_press: root.check()
+            Button:
+                text: "Dalej"
+                background_color: 0, 255/255, 0, 1
+                on_release:
+                    app.root.current = "summary"
+                    root.manager.transition.direction = "up"
+
+<Type82Window>:
+    name: "type82"
+    on_enter: root.build()
+
+    cb1: cb1
+    cb2: cb2
+    cb3: cb3
+    cb4: cb4
+
+    GridLayout:
+        rows: 10
+        Label:
+            text: "Które zdanie/zdania jest/są prawdziwe i dotyczą rekurencji? "
+            color: 41/255, 128/255, 185/255, 1.0
+
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb1
+            Label:
+                text: "Są znacznie szybsze niż normalne funkcje."
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb2
+            Label:
+                text: "Zajmują więcej miejsca niż funkcje nierekurencyjne."
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb3
+            Label:
+                text: "Zawsze można je zastąpić funkcjami nierekurencyjnymi."
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb4
+            Label:
+                text: "Korzystanie z funkcji rekurencyjnych daje jednak naturalne i proste proste rozwiązanie dla programu."
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            Button:
+                text:"Sprawdź"
+                on_press: root.check()
+            Button:
+                text: "Dalej"
+                background_color: 0, 255/255, 0, 1
+                on_release:
+                    app.root.current = "summary"
+                    root.manager.transition.direction = "up"
+
+<Type83Window>:
+    name: "type83"
+    on_enter: root.build()
+
+    cb1: cb1
+    cb2: cb2
+    cb3: cb3
+    cb4: cb4
+    cb5: cb5
+    cb6: cb6
+    cb7: cb7
+    cb8: cb8
+
+    GridLayout:
+        rows: 10
+        Label:
+            text: "Jaki będzie wynik wywołania poniższego kodu? "
+            color: 41/255, 128/255, 185/255, 1.0
+        Image:
+            source: "code.png"
+            size_hint: 1, 2
+
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb1
+            Label:
+                text: "dziesiętnie: 39"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb2
+            Label:
+                text: "dziesiętnie: 40"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb3
+            Label:
+                text: "dziesiętnie: 41"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb4
+            Label:
+                text: "dziesiętnie: 42"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb5
+            Label:
+                text: "binarnie: 100111"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb6
+            Label:
+                text: "binarnie: 101000"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb7
+            Label:
+                text: "binarnie: 101001"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb8
+            Label:
+                text: "binarnie: 101010"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            Button:
+                text:"Sprawdź"
+                on_press: root.check()
+            Button:
+                text: "Dalej"
+                background_color: 0, 255/255, 0, 1
+                on_release:
+                    app.root.current = "summary"
+                    root.manager.transition.direction = "up"
+
+<Type84Window>:
+    name: "type84"
+    on_enter: root.build()
+
+    cb1: cb1
+    cb2: cb2
+    cb3: cb3
+    cb4: cb4
+    cb5: cb5
+    cb6: cb6
+    cb7: cb7
+    cb8: cb8
+
+    GridLayout:
+        rows: 10
+        Label:
+            text: "Które z wywołań zwróci/zwrócą 4, zakładając że s = {3, 4, 1, 2}?"
+            color: 41/255, 128/255, 185/255, 1.0
+
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb1
+            Label:
+                text: "Sum(s)"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb2
+            Label:
+                text: "Len(s)"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb3
+            Label:
+                text: "Max(s)"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb4
+            Label:
+                text: "Four(s)"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb5
+            Label:
+                text: "print(s[1])"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb6
+            Label:
+                text: "print(s[2])"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb7
+            Label:
+                text: "High(s)"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb8
+            Label:
+                text: "High(s)"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            Button:
+                text:"Sprawdź"
+                on_press: root.check()
+            Button:
+                text: "Dalej"
+                background_color: 0, 255/255, 0, 1
+                on_release:
+                    app.root.current = "summary"
+                    root.manager.transition.direction = "up"
+
+<Type85Window>:
+    name: "type85"
+    on_enter: root.build()
+
+    cb1: cb1
+    cb2: cb2
+    cb3: cb3
+    cb4: cb4
+    cb5: cb5
+    cb6: cb6
+    cb7: cb7
+    cb8: cb8
+
+    GridLayout:
+        rows: 10
+        Label:
+            text: "Które z nich nie może/mogą być identyfikatorem w Pythonie?"
+            color: 41/255, 128/255, 185/255, 1.0
+
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb1
+            Label:
+                text: "1abc"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb2
+            Label:
+                text: "$12a"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb3
+            Label:
+                text: "_xy1"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb4
+            Label:
+                text: "@python"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb5
+            Label:
+                text: "aaaa"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb6
+            Label:
+                text: "b612"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb7
+            Label:
+                text: "123"
+                color: 41/255, 128/255, 185/255, 1.0
+        BoxLayout:
+            orientation: "horizontal"
+            CheckBox:
+                id: cb8
+            Label:
+                text: "pyth.1"
+                color: 41/255, 128/255, 185/255, 1.0
+
+        BoxLayout:
+            orientation: "horizontal"
+            Button:
+                text:"Sprawdź"
+                on_press: root.check()
+            Button:
+                text: "Dalej"
+                background_color: 0, 255/255, 0, 1
+                on_release:
+                    app.root.current = "summary"
+                    root.manager.transition.direction = "up"
+
+
+
+
